@@ -13,11 +13,12 @@ public class MainController {
 
    @GetMapping("/")
     public ModelAndView nahodnyCitat () {
-      int nahodneCislo = random.nextInt(7) + 1;
+      int nahodneCislo = random.nextInt();
 
        ModelAndView obrazek = new ModelAndView("index");
-       obrazek.addObject("obrazek",String.format("/images/obr-%d.jpg");
+       obrazek.addObject("obrazek",String.format("/images/obr-%d.jpg"));
        return obrazek;
+   }
 
     private static List<String> readAllLines(String resource)throws IOException{
            ClassLoader classLoader=Thread.currentThread().getContextClassLoader();
