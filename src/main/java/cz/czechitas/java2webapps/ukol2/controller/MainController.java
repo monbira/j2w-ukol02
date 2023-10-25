@@ -12,12 +12,17 @@ public class MainController {
    private final Random random = new Random();
 
    @GetMapping("/")
-    public ModelAndView nahodnyCitat () {
-      int nahodneCislo = random.nextInt();
+    public ModelAndView nahodnyCitatAObrazek () throws IOException {
+      int nahodneCislo = random.nextInt(7);
 
-       ModelAndView obrazek = new ModelAndView("index");
-       obrazek.addObject("obrazek",String.format("/images/obr-%d.jpg"));
-       return obrazek;
+       ModelAndView vysledek = new ModelAndView("index");
+       vysledek.addObject("obrazek",String.format("/images/obr-%d.jpg", nahodneCislo));
+
+       List<String> citaty = readAllLines("citaty.txt");
+       vysledek.addObject("citat", citaty.get(nahodneCislo));
+
+
+       return vysledek;
    }
 
     private static List<String> readAllLines(String resource)throws IOException{
