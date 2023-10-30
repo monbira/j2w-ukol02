@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
-<body style="${obrazek}">
-<blockquote><strong>Debugging</strong> /de·bugh·ing/ <em>verb</em><br/>The Classic Mystery Game where you are the detective, the victim, and the murderer.</blockquote>
+<body style="background-image: url(${obrazek})">
+<blockquote>${citat}</blockquote>
 </body>
 </html>

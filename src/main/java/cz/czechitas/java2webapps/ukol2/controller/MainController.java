@@ -20,7 +20,7 @@ public class MainController {
 
    @GetMapping("/")
     public ModelAndView nahodnyCitatAObrazek () throws IOException {
-      int nahodneCislo = random.nextInt(7);
+      int nahodneCislo = random.nextInt(6) + 1;
 
        ModelAndView vysledek = new ModelAndView("index");
        vysledek.addObject("obrazek",String.format("/images/obr-%d.jpg", nahodneCislo));
